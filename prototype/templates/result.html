@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h1>Prediction Result</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <p id="result" class="lead font-weight-bold">Class: {{ class_name }}</p>
+                        <img src="{{ image_url }}" alt="Uploaded Image" class="img-fluid rounded">
+                        <br><br>
+                        <a href="/" class="btn btn-secondary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Inline JavaScript to set the text color -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var className = "{{ class_name }}"; // This should be set by your server-side code
+            var resultElement = document.getElementById('result');
+            
+            if (className.toLowerCase() === 'healthy') {
+                resultElement.classList.add('text-success');
+            } else {
+                resultElement.classList.add('text-danger');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+//how to run:
+
+// open nyo muna terminal then enter nyo ito (assuming installed na python3 nyo)
+cd prototype // make sure u are in the prototype folder
+python3 -m venv venv
+
+source venv/bin/activate //(Mac)
+venv\Scripts\activate //(Windows)
+
+// one time lang itong 2, sa susunod na irrun no need na ito
+pip install Flask numpy opencv-python joblib 
+pip install scikit-learn
+
+// tapoooos last na
+python3 app.py 
+
+// paste this sa browser
+http://127.0.0.1:5000/
+
+
+//yey!
